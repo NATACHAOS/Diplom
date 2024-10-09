@@ -1,3 +1,5 @@
+import sys
+
 import telebot
 from time import sleep
 import asyncio
@@ -24,8 +26,8 @@ async def main1():
 
     # При написании /stop в боте - программа завершится
     @bot.message_handler(commands=['stop'])
-    def stop():
-        exit()
+    def stop(message):
+        bot.stop_polling()
 
     bot.polling()
 
